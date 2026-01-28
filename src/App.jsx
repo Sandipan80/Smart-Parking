@@ -73,8 +73,8 @@ function App() {
         <Header>
           <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
             <Menu.Item key="1"><Link to="/">Home</Link></Menu.Item>
-            <Menu.Item key="2"><Link to="/button">Button Page</Link></Menu.Item>
-            <Menu.Item key="3"><Link to="/form">Form Page</Link></Menu.Item>
+            <Menu.Item key="2"><Link to="/button">Signup Page</Link></Menu.Item>
+            <Menu.Item key="3"><Link to="/form">Login Page</Link></Menu.Item>
           </Menu>
         </Header>
 
