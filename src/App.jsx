@@ -63,6 +63,7 @@ import { Layout, Menu } from 'antd';
 
 import MyButton from './components/Button';
 import MyForm from './components/Form';
+import About from './components/About';
 
 const { Header, Content } = Layout;
 
@@ -73,8 +74,9 @@ function App() {
         <Header>
           <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
             <Menu.Item key="1"><Link to="/">Home</Link></Menu.Item>
-            <Menu.Item key="2"><Link to="/button">Signup Page</Link></Menu.Item>
-            <Menu.Item key="3"><Link to="/form">Login Page</Link></Menu.Item>
+            <Menu.Item key="2"><Link to="/about">About</Link></Menu.Item>
+            <Menu.Item key="3"><Link to="/button">Signup Page</Link></Menu.Item>
+            <Menu.Item key="4"><Link to="/form">Login Page</Link></Menu.Item>
           </Menu>
         </Header>
 
@@ -97,6 +99,7 @@ function App() {
           }}>
             <Routes>
               <Route path="/" element={<h2>Welcome! Click a menu item to navigate.</h2>} />
+              <Route path="/about" element={<About />} />
               <Route path="/button" element={<MyButton />} />
               <Route path="/form" element={<MyForm />} />
             </Routes>
