@@ -1,8 +1,24 @@
 import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
+import axios from 'axios';
 
-const onFinish = values => {
-  console.log('Success:', values);
+const onFinish = async (values) => {
+  try {
+    // This is the Step 3 connection logic
+    const response = await axios.post('http://localhost:5001/api/adhaarTeam/adhaarRegister', values);
+    
+    console.log('Login Success:', response.data);
+    
+    // Example: Store the token if your backend sends one
+    if (response.data.token) {
+      localStorage.setItem('token', response.data.token);
+    }
+    
+    alert('Login Successful!');
+  } catch (error) {
+    console.error('Login Error:', error.response?.data || error.message);
+    alert('Login Failed: ' + (error.response?.data?.message || 'Server Error'));
+  }
 };
 
 const onFinishFailed = errorInfo => {
